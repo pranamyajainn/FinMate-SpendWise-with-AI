@@ -1,0 +1,294 @@
+/* FinMate - SpendWise with AI Custom CSS */
+
+/* Base Theme Colors */
+:root {
+    --primary-blue: #1E88E5;
+    --primary-blue-light: #64B5F6;
+    --primary-blue-dark: #0D47A1;
+    
+    --savings-green: #43A047;
+    --savings-green-light: #81C784;
+    
+    --expense-red: #FF5252;
+    --expense-red-light: #FF8A80;
+    
+    --goals-purple: #7E57C2;
+    --goals-purple-light: #B39DDB;
+    
+    --unallocated-teal: #26A69A;
+    --unallocated-teal-light: #80CBC4;
+    
+    --neutral-bg: #F5F9FF;
+    --neutral-card: #FFFFFF;
+    --neutral-text: #37474F;
+    
+    --success: #00C853;
+    --warning: #FFD600;
+    --error: #FF3D00;
+    
+    /* Category Colors */
+    --cat-groceries: #66BB6A;
+    --cat-bills: #42A5F5;
+    --cat-entertainment: #AB47BC;
+    --cat-travel: #26C6DA;
+    --cat-dining: #FFA726;
+    --cat-shopping: #EC407A;
+    --cat-other: #78909C;
+  }
+  
+  /* Main App Styling */
+  .main {
+    background: linear-gradient(to bottom right, var(--neutral-bg), #E1F5FE);
+    padding: 1.5rem;
+  }
+  
+  /* Header Styling */
+  .main h1 {
+    color: var(--primary-blue-dark);
+    font-weight: 700;
+    background: linear-gradient(120deg, var(--primary-blue), var(--goals-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+  }
+  
+  .main h4 {
+    color: var(--neutral-text);
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  
+  /* Tab Navigation */
+  .stTabs [data-baseweb="tab-list"] {
+    gap: 10px;
+    background-color: var(--neutral-card);
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stTabs [data-baseweb="tab"] {
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-weight: 500;
+  }
+  
+  .stTabs [aria-selected="true"] {
+    background-color: var(--primary-blue);
+    color: white;
+  }
+  
+  /* Cards & Containers */
+  .stButton>button, .stForm button {
+    background-color: var(--primary-blue);
+    color: white;
+    border-radius: 50px;
+    padding: 0.5rem 2rem;
+    font-weight: 500;
+    border: none;
+    box-shadow: 0 2px 5px rgba(30, 136, 229, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .stButton>button:hover, .stForm button:hover {
+    background-color: var(--primary-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(30, 136, 229, 0.4);
+  }
+  
+  /* Metric Styling */
+  [data-testid="stMetric"] {
+    background: var(--neutral-card);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--primary-blue);
+    margin-bottom: 1rem;
+  }
+  
+  [data-testid="stMetric"] > div:first-child {
+    color: var(--primary-blue);
+  }
+  
+  /* Metric Color Coding */
+  [data-testid="stMetric"]:nth-of-type(1) {
+    border-left-color: var(--savings-green);
+  }
+  
+  [data-testid="stMetric"]:nth-of-type(2) {
+    border-left-color: var(--expense-red);
+  }
+  
+  [data-testid="stMetric"]:nth-of-type(3) {
+    border-left-color: var(--unallocated-teal);
+  }
+  
+  /* Progress Bars */
+  .stProgress > div > div {
+    background-image: linear-gradient(to right, var(--primary-blue-light), var(--primary-blue));
+    border-radius: 100px;
+  }
+  
+  /* Section Styling */
+  .main h3 {
+    color: var(--neutral-text);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-blue-light);
+  }
+  
+  .main h2, .main h3, .main h5 {
+    font-weight: 600;
+  }
+  
+  /* Data Tables */
+  [data-testid="stDataFrame"] {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  [data-testid="stDataFrame"] > div:first-child {
+    background-color: var(--primary-blue-light);
+    color: white;
+  }
+  
+  /* Form Inputs */
+  .stNumberInput input, .stTextInput input, .stDateInput input, .stSelectbox select {
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+    padding: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .stNumberInput input:focus, .stTextInput input:focus, .stDateInput input:focus, .stSelectbox select:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 2px rgba(30, 136, 229, 0.2);
+  }
+  
+  /* Info/Success/Warning/Error Messages */
+  .stAlert {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .stAlert[data-baseweb="notification"] {
+    margin-bottom: 1rem;
+  }
+  
+  /* Success Message */
+  div[data-kind="success"] {
+    background-color: rgba(0, 200, 83, 0.1);
+    border-left: 4px solid var(--success);
+  }
+  
+  /* Info Message */
+  div[data-kind="info"] {
+    background-color: rgba(30, 136, 229, 0.1);
+    border-left: 4px solid var(--primary-blue);
+  }
+  
+  /* Warning Message */
+  div[data-kind="warning"] {
+    background-color: rgba(255, 214, 0, 0.1);
+    border-left: 4px solid var(--warning);
+  }
+  
+  /* Error Message */
+  div[data-kind="error"] {
+    background-color: rgba(255, 61, 0, 0.1);
+    border-left: 4px solid var(--error);
+  }
+  
+  /* Expander Component */
+  .streamlit-expanderHeader {
+    font-weight: 600;
+    color: var(--neutral-text);
+    background-color: var(--neutral-card);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid var(--goals-purple);
+  }
+  
+  .streamlit-expanderContent {
+    background-color: var(--neutral-card);
+    border-radius: 0 0 8px 8px;
+    padding: 1rem;
+    margin-top: -8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Tab-specific styling */
+  /* Dashboard */
+  #dashboard div[data-testid="stPieChart"] svg {
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
+  }
+  
+  /* Track Expenses */
+  #track-expenses [data-testid="stChart"] {
+    background-color: var(--neutral-card);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Set Goals */
+  #set-goals .streamlit-expanderHeader {
+    background: linear-gradient(to right, var(--goals-purple-light), var(--goals-purple));
+    color: white;
+    border-left: none;
+  }
+  
+  #set-goals .stProgress > div > div {
+    background-image: linear-gradient(to right, var(--goals-purple-light), var(--goals-purple));
+  }
+  
+  /* Gamification */
+  #gamification [data-testid="stMetric"] {
+    background: linear-gradient(to bottom right, #FFFFFF, #FAFAFA);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-left: 4px solid #FFD54F;
+  }
+  
+  #gamification .stProgress > div > div {
+    background-image: linear-gradient(to right, #FFB74D, #FF9800);
+  }
+  
+  /* Chatbot */
+  #chatbot .stChatMessage {
+    border-radius: 18px;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 0.8rem;
+    max-width: 80%;
+  }
+  
+  #chatbot .stChatMessageUser {
+    background: var(--neutral-bg);
+    border-bottom-right-radius: 4px;
+    margin-left: auto;
+  }
+  
+  #chatbot .stChatMessageBot {
+    background: var(--primary-blue-light);
+    color: white;
+    border-bottom-left-radius: 4px;
+    margin-right: auto;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .main {
+      padding: 1rem;
+    }
+    
+    [data-testid="stMetric"] {
+      padding: 1rem;
+    }
+    
+    .stButton>button, .stForm button {
+      width: 100%;
+    }
+  }
