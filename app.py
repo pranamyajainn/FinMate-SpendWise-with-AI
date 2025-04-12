@@ -4,6 +4,12 @@ import streamlit as st
 from utils.categorize import categorize_expense
 #from utils.insights import generate_financial_insight
 #from utils.chatbot import get_chatbot_response
+import sys
+import torch
+
+# Remove torch from modules watched by Streamlit
+if 'torch' in sys.modules:
+    del sys.modules['torch']
 
 
 # Now you can set the page configuration
